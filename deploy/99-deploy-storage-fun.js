@@ -15,8 +15,11 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         // we need to wait if on a live network so we can verify properly
         waitConfirmations: network.config.blockConfirmations || 1,
     })
-    
-    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+
+    if (
+        !developmentChains.includes(network.name) &&
+        process.env.ETHERSCAN_API_KEY
+    ) {
         await verify(funWithStorage.address, [])
     }
 

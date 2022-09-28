@@ -48,10 +48,11 @@ module.exports = {
     },
     gasReporter: {
         enabled: true,
-        currency: "USD",
+        currency: "INR",
         outputFile: "gas-report.txt",
         noColors: true,
-        // coinmarketcap: COINMARKETCAP_API_KEY,
+        coinmarketcap: COINMARKETCAP_API_KEY,
+        token: "ETH",
     },
     namedAccounts: {
         deployer: {
